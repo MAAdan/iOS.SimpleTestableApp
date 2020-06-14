@@ -5,9 +5,9 @@
 
 import Foundation
 
-struct Article {
+struct ArticleResponse {
     let id: String
-    let type: String
+    let type: ArticleType
     let title: String
     let webContent: Bool
     let sponsored: Bool
@@ -19,5 +19,8 @@ struct Article {
     let section: String
     let date: Date
     let video: Bool
-    let multimedia: [MultimediaArticle]
+    let multimedia: [ArticleMultimedia]
+    let authors: [ArticleAuthor]
+    let tags: [ArticleTag]
+
 }

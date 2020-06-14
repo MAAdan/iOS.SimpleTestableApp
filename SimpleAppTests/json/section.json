@@ -1,0 +1,50 @@
+{
+    "id": "id",
+    "titulo": "title",
+    "type": "autocover",
+    "sectionId": "sectionId",
+    "breadcrumb": {
+        "path": "path",
+        "types": ["a", "b", "c"],
+        "name": "name"
+    },
+    "cts": [{
+            "id": "id",
+            "type": "live",
+            "url": "https://www.url.com/",
+            "titulo": "title",
+            "patrocinio": "",
+            "cintillo": "subsection",
+            "cintilloUrl": "",
+            "subtitle": "",
+            "sectionId": "sectionId",
+            "viewClass": "viewClass",
+            "seccion": "",
+            "publishedAt": "Sun, 14 Jun 2020 18:15:21 +0200",
+            "hasVideo": false,
+            "multimedia": [{
+                "width": 0,
+                "height": 0,
+                "sourceUrl": "https://www.url.com",
+                "url": "https://www.url.com",
+                "hasIcon": "ninguno",
+                "titulo": "",
+                "autor": "",
+                "type": "image",
+                "position": "subtitle",
+                "id": "2020-06-14-15921513964443"
+            }],
+            "authors": [{
+                "name": "author",
+                "location": ""
+            }],
+            "tags": [{
+                    "nameTag": "Primera División",
+                    "relevance": "100",
+                    "autocoverUrl": "https://www.url.com/",
+                    "idTag": "idTag"
+                }
+            ]
+        }
+    ]
+}

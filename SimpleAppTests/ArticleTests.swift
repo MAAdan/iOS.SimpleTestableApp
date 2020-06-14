@@ -13,38 +13,14 @@ class ArticleTests: XCTestCase {
             return XCTFail()
         }
 
-        let multimediaArticle = [
-            MultimediaArticle(
-                id: "id",
-                width: 0,
-                height: 0,
-                sourceUrl: url,
-                multimediaArticleUrl: url,
-                icon: "icon",
-                title: "title",
-                author: "author",
-                type: .image,
-                position: .subtitle
-            )
-        ]
+        let multimedia = [ArticleMultimedia(id: "id", width: 0, height: 0, sourceUrl: url, multimediaArticleUrl: url, icon: "icon", title: "title", author: "author", type: .image, position: .subtitle)]
 
-        let newsItem = Article(
-            id: "id",
-            type: "type",
-            title: "itle",
-            webContent: false,
-            sponsored: false,
-            subsection: "section",
-            subsectionUrl: url,
-            subtitle: "subtitle",
-            idSection: "idSection",
-            viewClass: "viewClass",
-            section: "",
-            date: Date(),
-            video: false,
-            multimedia: multimediaArticle
-        )
+        let authors = [ArticleAuthor(name: "name", location: "location")]
+        
+        let tags = [ArticleTag(id: "id", nameTag: "name", relevance: "relevance", autocoverUrl: url)]
 
-        XCTAssertNotNil(newsItem)
+        let articleResponse = ArticleResponse(id: "id", type: .live, title: "itle", webContent: false, sponsored: false, subsection: "section", subsectionUrl: url, subtitle: "subtitle", idSection: "idSection", viewClass: "viewClass", section: "section", date: Date(), video: false, multimedia: multimedia, authors: authors, tags: tags)
+
+        XCTAssertNotNil(articleResponse)
     }
 }

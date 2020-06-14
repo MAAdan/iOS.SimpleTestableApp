@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct MultimediaArticle {
+struct ArticleMultimedia {
     let id: String
     let width: Int?
     let height: Int?

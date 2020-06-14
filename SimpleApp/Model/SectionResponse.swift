@@ -5,11 +5,11 @@
 
 import Foundation
 
-struct Section {
+struct SectionResponse {
     let id: String
     let title: String
-    let type: String
+    let type: SectionType
     let sectionId: String
     let breadCrumb: SectionBreadcrumb
-    let contents: [Article]
+    let contents: [ArticleResponse]
 }
