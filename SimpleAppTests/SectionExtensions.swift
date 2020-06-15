@@ -6,14 +6,14 @@
 import Foundation
 @testable import SimpleApp
 
-extension SectionResponse {
-    static func makeSection() -> SectionResponse? {
-        guard let articleResponse = ArticleResponse.makeArticle() else {
+extension Section {
+    static func makeSection() -> Section? {
+        guard let articleResponse = Article.makeArticle() else {
             return nil
         }
 
-        let sectionBreadcrumb = SectionBreadcrumb(path: "path", types: ["a", "b", "c"], name: "name")
+        let sectionBreadcrumb = Breadcrumb(path: "path", types: ["a", "b", "c"], name: "name")
 
-        return SectionResponse(id: "id", title: "title", type: .autocover, sectionId: "sectionId", breadcrumb: sectionBreadcrumb, contents: [articleResponse])
+        return Section(id: "id", title: "title", type: .autocover, sectionId: "sectionId", breadcrumb: sectionBreadcrumb, contents: [articleResponse])
     }
 }
