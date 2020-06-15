@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct SectionBreadcrumb {
+struct SectionBreadcrumb: Decodable, Equatable {
     let path: String
     let types: [String]
     let name: String

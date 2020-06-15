@@ -5,44 +5,54 @@
     "sectionId": "sectionId",
     "breadcrumb": {
         "path": "path",
-        "types": ["a", "b", "c"],
+        "types": [
+            "a",
+            "b",
+            "c"
+        ],
         "name": "name"
     },
-    "cts": [{
+    "cts": [
+        {
             "id": "id",
             "type": "live",
-            "url": "https://www.url.com/",
+            "url": "https://www.url.com",
             "titulo": "title",
-            "patrocinio": "",
+            "patrocinio": "sponsored",
             "cintillo": "subsection",
-            "cintilloUrl": "",
-            "subtitle": "",
+            "cintilloUrl": "https://www.url.com",
+            "subtitle": "subtitle",
             "sectionId": "sectionId",
             "viewClass": "viewClass",
-            "seccion": "",
+            "seccion": "section",
             "publishedAt": "Sun, 14 Jun 2020 18:15:21 +0200",
             "hasVideo": false,
-            "multimedia": [{
-                "width": 0,
-                "height": 0,
-                "sourceUrl": "https://www.url.com",
-                "url": "https://www.url.com",
-                "hasIcon": "ninguno",
-                "titulo": "",
-                "autor": "",
-                "type": "image",
-                "position": "subtitle",
-                "id": "2020-06-14-15921513964443"
-            }],
-            "authors": [{
-                "name": "author",
-                "location": ""
-            }],
-            "tags": [{
-                    "nameTag": "Primera División",
-                    "relevance": "100",
-                    "autocoverUrl": "https://www.url.com/",
-                    "idTag": "idTag"
+            "multimedia": [
+                {
+                    "id": "id",
+                    "width": 0,
+                    "height": 0,
+                    "sourceUrl": "https://www.url.com",
+                    "url": "https://www.url.com",
+                    "hasIcon": "icon",
+                    "titulo": "title",
+                    "autor": "author",
+                    "type": "image",
+                    "position": "subtitle"
+                }
+            ],
+            "authors": [
+                {
+                    "name": "name",
+                    "location": "location"
+                }
+            ],
+            "tags": [
+                {
+                    "nameTag": "name",
+                    "relevance": "relevance",
+                    "autocoverUrl": "https://www.url.com",
+                    "idTag": "id"
                 }
             ]
         }

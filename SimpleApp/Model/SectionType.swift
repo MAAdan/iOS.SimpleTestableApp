@@ -5,6 +5,6 @@
 
 import Foundation
 
-enum SectionType {
+enum SectionType: String, Decodable, Equatable {
     case autocover
 }

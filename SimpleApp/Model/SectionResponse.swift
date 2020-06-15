@@ -5,11 +5,20 @@
 
 import Foundation
 
-struct SectionResponse {
+struct SectionResponse: Decodable, Equatable {
     let id: String
     let title: String
     let type: SectionType
     let sectionId: String
-    let breadCrumb: SectionBreadcrumb
+    let breadcrumb: SectionBreadcrumb
     let contents: [ArticleResponse]
+
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case title = "titulo"
+        case type
+        case sectionId = "sectionId"
+        case breadcrumb
+        case contents = "cts"
+    }
 }

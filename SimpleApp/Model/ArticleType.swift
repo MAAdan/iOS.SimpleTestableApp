@@ -5,7 +5,7 @@
 
 import Foundation
 
-enum ArticleType {
+enum ArticleType: String, Decodable, Equatable {
     case article
     case chronicle
     case live

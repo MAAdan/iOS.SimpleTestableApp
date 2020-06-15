@@ -9,18 +9,30 @@ import XCTest
 class ArticleTests: XCTestCase {
 
     func testArticleNotNil() throws {
-        guard let url = URL(string: "https://www.general.com") else {
-            return XCTFail()
-        }
-
-        let multimedia = [ArticleMultimedia(id: "id", width: 0, height: 0, sourceUrl: url, multimediaArticleUrl: url, icon: "icon", title: "title", author: "author", type: .image, position: .subtitle)]
-
-        let authors = [ArticleAuthor(name: "name", location: "location")]
-        
-        let tags = [ArticleTag(id: "id", nameTag: "name", relevance: "relevance", autocoverUrl: url)]
-
-        let articleResponse = ArticleResponse(id: "id", type: .live, title: "itle", webContent: false, sponsored: false, subsection: "section", subsectionUrl: url, subtitle: "subtitle", idSection: "idSection", viewClass: "viewClass", section: "section", date: Date(), video: false, multimedia: multimedia, authors: authors, tags: tags)
+        let articleResponse = ArticleResponse.makeArticle()
 
         XCTAssertNotNil(articleResponse)
+    }
+
+    func testDecodedArticle() throws {
+        guard let pathString = Bundle(for: type(of: self)).path(forResource: "article", ofType: "json") else {
+            return XCTFail("article.json not found")
+        }
+
+        guard let jsonString = try? String(contentsOfFile: pathString, encoding: .utf8) else {
+            return XCTFail("Unable to convert article.json to String")
+        }
+
+        guard let jsonData = jsonString.data(using: .utf8) else {
+            return XCTFail("Unable to convert article.json to Data")
+        }
+
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(DateFormatter.articleDateFormatter)
+
+        let decodedArticle = try decoder.decode(ArticleResponse.self, from: jsonData)
+
+        let expectedArticle = ArticleResponse.makeArticle()
+        XCTAssertEqual(decodedArticle, expectedArticle)
     }
 }

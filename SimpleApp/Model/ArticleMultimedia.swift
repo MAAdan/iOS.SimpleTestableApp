@@ -5,24 +5,37 @@
 
 import Foundation
 
-struct ArticleMultimedia {
+struct ArticleMultimedia: Decodable, Equatable {
     let id: String
     let width: Int?
     let height: Int?
     let sourceUrl: URL?
-    let multimediaArticleUrl: URL
+    let url: URL
     let icon: String?
     let title: String
     let author: String
-    let type: MultimediaArticleType
-    let position: MultimediaArticlePosition?
+    let articleType: ArticleMultimedia.MultimediaType
+    let articlePosition: ArticleMultimedia.MultimediaPosition?
 
-    enum MultimediaArticleType {
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case width
+        case height
+        case sourceUrl
+        case url
+        case icon = "hasIcon"
+        case title = "titulo"
+        case author = "autor"
+        case articleType = "type"
+        case articlePosition = "position"
+    }
+
+    enum MultimediaType: String, Decodable, Equatable {
         case image
         case video
     }
 
-    enum MultimediaArticlePosition {
+    enum MultimediaPosition: String, Decodable, Equatable {
         case subtitle
     }
 }

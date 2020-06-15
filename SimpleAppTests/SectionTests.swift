@@ -9,22 +9,36 @@ import XCTest
 class SectionTests: XCTestCase {
     
     func testSectionNotNil() {
-        guard let url = URL(string: "https://www.general.com") else {
+        guard let articleResponse = ArticleResponse.makeArticle() else {
             return XCTFail()
         }
 
         let sectionBreadcrumb = SectionBreadcrumb(path: "path", types: ["a", "b", "c"], name: "name")
 
-        let multimedia = [ArticleMultimedia(id: "id", width: 0, height: 0, sourceUrl: url, multimediaArticleUrl: url, icon: "icon", title: "title", author: "author", type: .image, position: .subtitle)]
-
-        let authors = [ArticleAuthor(name: "name", location: "location")]
-
-        let tags = [ArticleTag(id: "id", nameTag: "name", relevance: "relevance", autocoverUrl: url)]
-
-        let articleResponse = ArticleResponse(id: "id", type: .live, title: "itle", webContent: false, sponsored: false, subsection: "section", subsectionUrl: url, subtitle: "subtitle", idSection: "idSection", viewClass: "viewClass", section: "section", date: Date(), video: false, multimedia: multimedia, authors: authors, tags: tags)
-
-        let sectionResponse = SectionResponse(id: "id", title: "title", type: .autocover, sectionId: "sectionId", breadCrumb: sectionBreadcrumb, contents: [articleResponse])
+        let sectionResponse = SectionResponse(id: "id", title: "title", type: .autocover, sectionId: "sectionId", breadcrumb: sectionBreadcrumb, contents: [articleResponse])
 
         XCTAssertNotNil(sectionResponse)
+    }
+
+    func testDecodedSection() throws {
+        guard let pathString = Bundle(for: type(of: self)).path(forResource: "section", ofType: "json") else {
+            return XCTFail("section.json not found")
+        }
+
+        guard let jsonString = try? String(contentsOfFile: pathString, encoding: .utf8) else {
+            return XCTFail("Unable to convert section.json to String")
+        }
+
+        guard let jsonData = jsonString.data(using: .utf8) else {
+            return XCTFail("Unable to convert section.json to Data")
+        }
+
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(DateFormatter.articleDateFormatter)
+
+        let decodedSection = try decoder.decode(SectionResponse.self, from: jsonData)
+        let expectedSection = SectionResponse.makeSection()
+
+        XCTAssertEqual(decodedSection, expectedSection)
     }
 }

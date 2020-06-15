@@ -5,14 +5,14 @@
 
 import Foundation
 
-struct ArticleResponse {
+struct ArticleResponse: Decodable, Equatable {
     let id: String
     let type: ArticleType
+    let url: URL
     let title: String
-    let webContent: Bool
-    let sponsored: Bool
+    let sponsored: String
     let subsection: String
-    let subsectionUrl: URL
+    let urlSubsection: URL
     let subtitle: String
     let idSection: String
     let viewClass: String
@@ -23,4 +23,22 @@ struct ArticleResponse {
     let authors: [ArticleAuthor]
     let tags: [ArticleTag]
 
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case type
+        case url
+        case title = "titulo"
+        case sponsored = "patrocinio"
+        case subsection = "cintillo"
+        case urlSubsection = "cintilloUrl"
+        case subtitle
+        case idSection = "sectionId"
+        case viewClass
+        case section = "seccion"
+        case date = "publishedAt"
+        case video = "hasVideo"
+        case multimedia
+        case authors
+        case tags
+    }
 }

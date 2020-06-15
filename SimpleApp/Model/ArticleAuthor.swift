@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct ArticleAuthor {
+struct ArticleAuthor: Decodable, Equatable {
     let name: String
     let location: String
 }

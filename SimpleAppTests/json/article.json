@@ -1,0 +1,43 @@
+{
+    "id": "id",
+    "type": "live",
+    "url": "https://www.url.com",
+    "titulo": "title",
+    "patrocinio": "sponsored",
+    "cintillo": "subsection",
+    "cintilloUrl": "https://www.url.com",
+    "subtitle": "subtitle",
+    "sectionId": "sectionId",
+    "viewClass": "viewClass",
+    "seccion": "section",
+    "publishedAt": "Sun, 14 Jun 2020 18:15:21 +0200",
+    "hasVideo": false,
+    "multimedia": [
+        {
+            "id": "id",
+            "width": 0,
+            "height": 0,
+            "sourceUrl": "https://www.url.com",
+            "url": "https://www.url.com",
+            "hasIcon": "icon",
+            "titulo": "title",
+            "autor": "author",
+            "type": "image",
+            "position": "subtitle"
+        }
+    ],
+    "authors": [
+        {
+            "name": "name",
+            "location": "location"
+        }
+    ],
+    "tags": [
+        {
+            "nameTag": "name",
+            "relevance": "relevance",
+            "autocoverUrl": "https://www.url.com",
+            "idTag": "id"
+        }
+    ]
+}
