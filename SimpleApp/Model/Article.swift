@@ -22,7 +22,9 @@ struct Article: Decodable, Equatable {
     let multimedia: [Multimedia]
     let authors: [Author]
     let tags: [Tag]
+}
 
+extension Article {
     private enum CodingKeys: String, CodingKey {
         case id
         case type

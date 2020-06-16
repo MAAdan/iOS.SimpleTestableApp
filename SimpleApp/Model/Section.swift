@@ -12,7 +12,9 @@ struct Section: Decodable, Equatable {
     let sectionId: String
     let breadcrumb: Breadcrumb
     let contents: [Article]
+}
 
+extension Section {
     private enum CodingKeys: String, CodingKey {
         case id
         case title = "titulo"
