@@ -6,7 +6,7 @@
 import XCTest
 @testable import SimpleApp
 
-class RemoteDataManagerTests: XCTestCase {
+class APIClientTests: XCTestCase {
 
     override func setUpWithError() throws {
     }
@@ -23,7 +23,7 @@ class RemoteDataManagerTests: XCTestCase {
     }
 }
 
-extension RemoteDataManagerTests {
+extension APIClientTests {
     class MockURLSession: SessionProtocol {
         var url: URL?
 
