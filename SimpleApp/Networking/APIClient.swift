@@ -14,6 +14,7 @@ extension URLSession: SessionProtocol { }
 class APIClient {
 
     enum APIClientError: Error {
+        case nilData
         case decode
         case genericNetwork(Error)
     }
@@ -24,15 +25,27 @@ class APIClient {
         self.session = session
     }
 
-    func getSection(_ section: URL.sectionPath, completion: @escaping (Result<Section?, APIClientError>) -> Void) {
+    func getSection(_ section: URL.sectionPath, completion: @escaping (Result<Section, APIClientError>) -> Void) {
 
         guard let url = URL(string: URL.sectionDomain + section.rawValue) else {
             preconditionFailure()
         }
 
         let dataTask = session.dataTask(with: url) { data, response, error in
+
+            guard let data = data else {
+                return completion(.failure(.nilData))
+            }
+
             guard let error = error else {
-                return completion(.success(nil))
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .formatted(DateFormatter.articleDateFormatter)
+
+                do {
+                    return completion(.success(try decoder.decode(Section.self, from: data)))
+                } catch {
+                    return completion(.failure(.decode))
+                }
             }
 
             completion(.failure(.genericNetwork(error)))

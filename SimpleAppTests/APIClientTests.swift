@@ -52,6 +52,28 @@ class APIClientTests: XCTestCase {
 
         waitForExpectations(timeout: 1)
     }
+
+    func testThatGetSectionCompletionHandlerIsCalledWithSuccess() {
+        guard let jsonData = TestUtils().getData(from: "section", fileType: "json") else {
+            return XCTFail("Unable to convert section.json to Data")
+        }
+
+        let completionExpectation = expectation(description: #function)
+
+        mockURLSession = MockURLSession(data: jsonData, urlResponse: nil, error: nil)
+        apiClient = APIClient(session: mockURLSession)
+        apiClient.getSection(.index) { result in
+            switch result {
+            case .failure(_):
+                break
+            case .success(let section):
+                XCTAssertEqual(section, Section.makeSection())
+                completionExpectation.fulfill()
+            }
+        }
+
+        waitForExpectations(timeout: 1)
+    }
 }
 
 extension APIClientTests {
