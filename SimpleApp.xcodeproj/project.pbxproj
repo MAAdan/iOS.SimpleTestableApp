@@ -19,6 +19,7 @@
 		2540C7D62497FA4500F971EC /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2540C7D52497FA4500F971EC /* APIClientTests.swift */; };
 		2540C7D92497FD4400F971EC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2540C7D82497FD4400F971EC /* APIClient.swift */; };
 		25557B58249A99D4001EAEC8 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25557B57249A99D4001EAEC8 /* URLExtension.swift */; };
+		25557B5A249B37CE001EAEC8 /* section-with-error.json in Resources */ = {isa = PBXBuildFile; fileRef = 25557B59249B37CE001EAEC8 /* section-with-error.json */; };
 		257EA4EF24966A43002D434C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257EA4EE24966A43002D434C /* AppDelegate.swift */; };
 		257EA4F124966A43002D434C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257EA4F024966A43002D434C /* SceneDelegate.swift */; };
 		257EA4F324966A43002D434C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257EA4F224966A43002D434C /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 		2540C7D52497FA4500F971EC /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 		2540C7D82497FD4400F971EC /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		25557B57249A99D4001EAEC8 /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
+		25557B59249B37CE001EAEC8 /* section-with-error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "section-with-error.json"; sourceTree = "<group>"; };
 		257EA4EB24966A43002D434C /* SimpleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		257EA4EE24966A43002D434C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		257EA4F024966A43002D434C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				2540C7C024969C2600F971EC /* section.json */,
+				25557B59249B37CE001EAEC8 /* section-with-error.json */,
 				2540C7CA2496A5A900F971EC /* article.json */,
 			);
 			path = json;
@@ -258,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25557B5A249B37CE001EAEC8 /* section-with-error.json in Resources */,
 				2540C7CB2496A5A900F971EC /* article.json in Resources */,
 				2540C7C124969C2600F971EC /* section.json in Resources */,
 			);

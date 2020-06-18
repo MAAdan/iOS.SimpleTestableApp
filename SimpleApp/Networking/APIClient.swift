@@ -32,7 +32,6 @@ class APIClient {
         }
 
         let dataTask = session.dataTask(with: url) { data, response, error in
-
             guard let data = data else {
                 return completion(.failure(.nilData))
             }
