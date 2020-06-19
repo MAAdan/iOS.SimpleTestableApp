@@ -20,13 +20,27 @@
 		2540C7D92497FD4400F971EC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2540C7D82497FD4400F971EC /* APIClient.swift */; };
 		25557B58249A99D4001EAEC8 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25557B57249A99D4001EAEC8 /* URLExtension.swift */; };
 		25557B5A249B37CE001EAEC8 /* section-with-error.json in Resources */ = {isa = PBXBuildFile; fileRef = 25557B59249B37CE001EAEC8 /* section-with-error.json */; };
+		25557B5C249BB1FF001EAEC8 /* MainTabBarControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25557B5B249BB1FF001EAEC8 /* MainTabBarControllerTests.swift */; };
+		25557B5F249BB542001EAEC8 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25557B5E249BB542001EAEC8 /* MainTabBarController.swift */; };
+		25557B61249BBA26001EAEC8 /* MainContainerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25557B60249BBA26001EAEC8 /* MainContainerViewControllerTests.swift */; };
+		25557B63249BC139001EAEC8 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25557B62249BC139001EAEC8 /* MainNavigationController.swift */; };
+		25557B65249BEAD8001EAEC8 /* MainNavigationControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25557B64249BEAD8001EAEC8 /* MainNavigationControllerTests.swift */; };
 		257EA4EF24966A43002D434C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257EA4EE24966A43002D434C /* AppDelegate.swift */; };
 		257EA4F124966A43002D434C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257EA4F024966A43002D434C /* SceneDelegate.swift */; };
-		257EA4F324966A43002D434C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257EA4F224966A43002D434C /* ViewController.swift */; };
+		257EA4F324966A43002D434C /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257EA4F224966A43002D434C /* MainContainerViewController.swift */; };
 		257EA4F624966A43002D434C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 257EA4F424966A43002D434C /* Main.storyboard */; };
 		257EA4F824966A44002D434C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 257EA4F724966A44002D434C /* Assets.xcassets */; };
 		257EA4FB24966A44002D434C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 257EA4F924966A44002D434C /* LaunchScreen.storyboard */; };
 		257EA50624966A45002D434C /* ArticleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257EA50524966A45002D434C /* ArticleTests.swift */; };
+		25BB67B6249C08E200D14F30 /* TabBarItemInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BB67B5249C08E200D14F30 /* TabBarItemInfoTests.swift */; };
+		25BB67B8249C099200D14F30 /* TabBarInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BB67B7249C099200D14F30 /* TabBarInfo.swift */; };
+		25BB67BB249C0AA900D14F30 /* BarTabable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BB67BA249C0AA900D14F30 /* BarTabable.swift */; };
+		25BB67BD249C94A300D14F30 /* MenuViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BB67BC249C94A300D14F30 /* MenuViewControllerTests.swift */; };
+		25BB67BF249C94CE00D14F30 /* SectionViewerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BB67BE249C94CE00D14F30 /* SectionViewerViewControllerTests.swift */; };
+		25BB67CA249CBCA400D14F30 /* SectionViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BB67C8249CBCA400D14F30 /* SectionViewerViewController.swift */; };
+		25BB67CB249CBCA400D14F30 /* SectionViewerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25BB67C9249CBCA400D14F30 /* SectionViewerViewController.xib */; };
+		25BB67CE249CBCCA00D14F30 /* MenuViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BB67CC249CBCCA00D14F30 /* MenuViewControllerViewController.swift */; };
+		25BB67CF249CBCCA00D14F30 /* MenuViewControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25BB67CD249CBCCA00D14F30 /* MenuViewControllerViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +67,15 @@
 		2540C7D82497FD4400F971EC /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		25557B57249A99D4001EAEC8 /* URLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 		25557B59249B37CE001EAEC8 /* section-with-error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "section-with-error.json"; sourceTree = "<group>"; };
+		25557B5B249BB1FF001EAEC8 /* MainTabBarControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerTests.swift; sourceTree = "<group>"; };
+		25557B5E249BB542001EAEC8 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		25557B60249BBA26001EAEC8 /* MainContainerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainerViewControllerTests.swift; sourceTree = "<group>"; };
+		25557B62249BC139001EAEC8 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		25557B64249BEAD8001EAEC8 /* MainNavigationControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationControllerTests.swift; sourceTree = "<group>"; };
 		257EA4EB24966A43002D434C /* SimpleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		257EA4EE24966A43002D434C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		257EA4F024966A43002D434C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		257EA4F224966A43002D434C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		257EA4F224966A43002D434C /* MainContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainerViewController.swift; sourceTree = "<group>"; };
 		257EA4F524966A43002D434C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		257EA4F724966A44002D434C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		257EA4FA24966A44002D434C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,6 +83,15 @@
 		257EA50124966A45002D434C /* SimpleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		257EA50524966A45002D434C /* ArticleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTests.swift; sourceTree = "<group>"; };
 		257EA50724966A45002D434C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25BB67B5249C08E200D14F30 /* TabBarItemInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemInfoTests.swift; sourceTree = "<group>"; };
+		25BB67B7249C099200D14F30 /* TabBarInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarInfo.swift; sourceTree = "<group>"; };
+		25BB67BA249C0AA900D14F30 /* BarTabable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarTabable.swift; sourceTree = "<group>"; };
+		25BB67BC249C94A300D14F30 /* MenuViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewControllerTests.swift; sourceTree = "<group>"; };
+		25BB67BE249C94CE00D14F30 /* SectionViewerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionViewerViewControllerTests.swift; sourceTree = "<group>"; };
+		25BB67C8249CBCA400D14F30 /* SectionViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionViewerViewController.swift; sourceTree = "<group>"; };
+		25BB67C9249CBCA400D14F30 /* SectionViewerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionViewerViewController.xib; sourceTree = "<group>"; };
+		25BB67CC249CBCCA00D14F30 /* MenuViewControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewControllerViewController.swift; sourceTree = "<group>"; };
+		25BB67CD249CBCCA00D14F30 /* MenuViewControllerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewControllerViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +117,7 @@
 			children = (
 				2540C7B52496852F00F971EC /* Article.swift */,
 				2540C7B924968BB700F971EC /* Section.swift */,
+				25BB67B7249C099200D14F30 /* TabBarInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -120,6 +149,20 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		25557B5D249BB48F001EAEC8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				257EA4F224966A43002D434C /* MainContainerViewController.swift */,
+				25557B5E249BB542001EAEC8 /* MainTabBarController.swift */,
+				25557B62249BC139001EAEC8 /* MainNavigationController.swift */,
+				25BB67C8249CBCA400D14F30 /* SectionViewerViewController.swift */,
+				25BB67C9249CBCA400D14F30 /* SectionViewerViewController.xib */,
+				25BB67CC249CBCCA00D14F30 /* MenuViewControllerViewController.swift */,
+				25BB67CD249CBCCA00D14F30 /* MenuViewControllerViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		257EA4E224966A43002D434C = {
 			isa = PBXGroup;
 			children = (
@@ -141,12 +184,13 @@
 		257EA4ED24966A43002D434C /* SimpleApp */ = {
 			isa = PBXGroup;
 			children = (
+				25BB67B9249C0A0F00D14F30 /* Protocols */,
+				25557B5D249BB48F001EAEC8 /* View */,
 				2540C7D72497FCFB00F971EC /* Networking */,
 				2540C7CC2496B2D200F971EC /* Extensions */,
 				2540C7B42496851E00F971EC /* Model */,
 				257EA4EE24966A43002D434C /* AppDelegate.swift */,
 				257EA4F024966A43002D434C /* SceneDelegate.swift */,
-				257EA4F224966A43002D434C /* ViewController.swift */,
 				257EA4F424966A43002D434C /* Main.storyboard */,
 				257EA4F724966A44002D434C /* Assets.xcassets */,
 				257EA4F924966A44002D434C /* LaunchScreen.storyboard */,
@@ -166,8 +210,22 @@
 				2540C7D12496CBEF00F971EC /* SectionExtensions.swift */,
 				2540C7D32497C48D00F971EC /* BundleExtensions.swift */,
 				2540C7D52497FA4500F971EC /* APIClientTests.swift */,
+				25557B5B249BB1FF001EAEC8 /* MainTabBarControllerTests.swift */,
+				25557B60249BBA26001EAEC8 /* MainContainerViewControllerTests.swift */,
+				25557B64249BEAD8001EAEC8 /* MainNavigationControllerTests.swift */,
+				25BB67B5249C08E200D14F30 /* TabBarItemInfoTests.swift */,
+				25BB67BC249C94A300D14F30 /* MenuViewControllerTests.swift */,
+				25BB67BE249C94CE00D14F30 /* SectionViewerViewControllerTests.swift */,
 			);
 			path = SimpleAppTests;
+			sourceTree = "<group>";
+		};
+		25BB67B9249C0A0F00D14F30 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				25BB67BA249C0AA900D14F30 /* BarTabable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,7 +311,9 @@
 			files = (
 				257EA4FB24966A44002D434C /* LaunchScreen.storyboard in Resources */,
 				257EA4F824966A44002D434C /* Assets.xcassets in Resources */,
+				25BB67CB249CBCA400D14F30 /* SectionViewerViewController.xib in Resources */,
 				257EA4F624966A43002D434C /* Main.storyboard in Resources */,
+				25BB67CF249CBCCA00D14F30 /* MenuViewControllerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,14 +334,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				257EA4F324966A43002D434C /* ViewController.swift in Sources */,
+				257EA4F324966A43002D434C /* MainContainerViewController.swift in Sources */,
 				2540C7CE2496B2F200F971EC /* DateFormatterExtension.swift in Sources */,
 				2540C7B62496852F00F971EC /* Article.swift in Sources */,
+				25BB67BB249C0AA900D14F30 /* BarTabable.swift in Sources */,
+				25BB67CE249CBCCA00D14F30 /* MenuViewControllerViewController.swift in Sources */,
+				25557B63249BC139001EAEC8 /* MainNavigationController.swift in Sources */,
+				25BB67CA249CBCA400D14F30 /* SectionViewerViewController.swift in Sources */,
+				25557B5F249BB542001EAEC8 /* MainTabBarController.swift in Sources */,
 				2540C7D92497FD4400F971EC /* APIClient.swift in Sources */,
 				2540C7BA24968BB700F971EC /* Section.swift in Sources */,
 				25557B58249A99D4001EAEC8 /* URLExtension.swift in Sources */,
 				257EA4EF24966A43002D434C /* AppDelegate.swift in Sources */,
 				257EA4F124966A43002D434C /* SceneDelegate.swift in Sources */,
+				25BB67B8249C099200D14F30 /* TabBarInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,10 +357,16 @@
 			files = (
 				257EA50624966A45002D434C /* ArticleTests.swift in Sources */,
 				2540C7D02496C70400F971EC /* ArticleExtensions.swift in Sources */,
+				25BB67BD249C94A300D14F30 /* MenuViewControllerTests.swift in Sources */,
 				2540C7BE2496984300F971EC /* SectionTests.swift in Sources */,
+				25557B61249BBA26001EAEC8 /* MainContainerViewControllerTests.swift in Sources */,
+				25BB67B6249C08E200D14F30 /* TabBarItemInfoTests.swift in Sources */,
+				25557B65249BEAD8001EAEC8 /* MainNavigationControllerTests.swift in Sources */,
 				2540C7D62497FA4500F971EC /* APIClientTests.swift in Sources */,
 				2540C7D22496CBEF00F971EC /* SectionExtensions.swift in Sources */,
 				2540C7D42497C48D00F971EC /* BundleExtensions.swift in Sources */,
+				25BB67BF249C94CE00D14F30 /* SectionViewerViewControllerTests.swift in Sources */,
+				25557B5C249BB1FF001EAEC8 /* MainTabBarControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

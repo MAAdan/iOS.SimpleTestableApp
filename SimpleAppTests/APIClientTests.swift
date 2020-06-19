@@ -23,7 +23,7 @@ class APIClientTests: XCTestCase {
         apiClient = APIClient(session: mockURLSession)
 
         apiClient.getSection(.index) { _ in }
-        XCTAssertEqual(mockURLSession.urlComponents?.path, "/json/index.json")
+        XCTAssertEqual(mockURLSession.urlComponents?.path, URL.sectionPath.index.rawValue)
     }
 
     func testThatGetSectionCompletionHandlerIsCalled() {

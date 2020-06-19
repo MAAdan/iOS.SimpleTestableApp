@@ -13,13 +13,13 @@ extension URLSession: SessionProtocol { }
 
 class APIClient {
 
+    private let session: SessionProtocol
+
     enum APIClientError: Error {
         case nilData
         case decode
         case genericNetwork(Error)
     }
-
-    let session: SessionProtocol
 
     init(session: SessionProtocol) {
         self.session = session

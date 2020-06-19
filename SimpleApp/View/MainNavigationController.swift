@@ -1,15 +1,13 @@
 //
-//  Created on 14/06/2020.
+//  Created on 18/06/2020.
 //  Copyright © 2020 Miguel Adan. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 }
-
