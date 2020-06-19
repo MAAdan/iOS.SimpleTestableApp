@@ -22,37 +22,5 @@
             </objects>
             <point key="canvasLocation" x="139" y="117"/>
         </scene>
-        <!--Item 2-->
-        <scene sceneID="EPc-qF-zdJ">
-            <objects>
-                <viewController id="rh6-R1-MyH" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="g3n-MS-ENw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="oh5-Di-2Jx"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="UgN-Kt-kbk"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xc0-9x-cYU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2942" y="498"/>
-        </scene>
-        <!--Item 1-->
-        <scene sceneID="02K-Zj-xS2">
-            <objects>
-                <viewController id="Du6-5Y-jgn" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="RL9-HD-cSg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="Ukg-Gg-mOz"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="GOm-jQ-Muq"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YqD-kh-EBj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2943" y="-195"/>
-        </scene>
     </scenes>
 </document>
