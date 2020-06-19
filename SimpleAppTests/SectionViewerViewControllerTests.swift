@@ -9,7 +9,7 @@ import XCTest
 class SectionViewerViewControllerTests: XCTestCase {
 
     func testSectionViewerViewControllerTabBarInfoNotNil() throws {
-        let sectionViewer = SectionViewerViewController(tabBarInfo: TabBarInfo(title: "Title", imageName: "ImageName"))
+        let sectionViewer = SectionViewerViewController(tabTitle: TabBarType.news.title, tabImageName: TabBarType.news.imageName)
         XCTAssertNotNil(sectionViewer.tabBarItem)
     }
 }

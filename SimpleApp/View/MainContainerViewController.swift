@@ -13,8 +13,8 @@ class MainContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let menuViewController = MenuViewController(tabBarInfo: TabBarInfo(title: "Menu", imageName: "menu") )
-        let sectionViewer = SectionViewerViewController(tabBarInfo: TabBarInfo(title: "Content", imageName: "news"))
+        let menuViewController = MenuViewController(tabTitle: TabBarType.menu.title, tabImageName: TabBarType.menu.imageName)
+        let sectionViewer = SectionViewerViewController(tabTitle: TabBarType.news.title, tabImageName: TabBarType.news.imageName)
 
         mainTabBarController = MainTabBarController(viewControllers: [sectionViewer, menuViewController])
         mainNavigationController = MainNavigationController(rootViewController: mainTabBarController)
@@ -24,4 +24,3 @@ class MainContainerViewController: UIViewController {
         mainNavigationController.didMove(toParent: self)
     }
 }
-

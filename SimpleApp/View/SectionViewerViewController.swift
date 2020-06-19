@@ -7,9 +7,9 @@ import UIKit
 
 class SectionViewerViewController: UIViewController, BarTabable {
 
-    required init(tabBarInfo: TabBarInfo) {
+    required init(tabTitle: String, tabImageName: String) {
         super.init(nibName: nil, bundle: nil)
-        setTabBarInfo(tabBarInfo)
+        setTabBarInfo(tabTitle: tabTitle, tabImageName: tabImageName)
     }
 
     required init?(coder: NSCoder) {

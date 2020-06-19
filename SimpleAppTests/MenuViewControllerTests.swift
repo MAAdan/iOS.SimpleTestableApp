@@ -9,7 +9,7 @@ import XCTest
 class MenuViewControllerTests: XCTestCase {
 
     func testMenuViewControllerTabBarInfoNotNil() throws {
-        let menuViewController = MenuViewController(tabBarInfo: TabBarInfo(title: "Title", imageName: "ImageName"))
+        let menuViewController = MenuViewController(tabTitle: TabBarType.menu.title, tabImageName: TabBarType.menu.imageName)
         XCTAssertNotNil(menuViewController.tabBarItem)
     }
 }
