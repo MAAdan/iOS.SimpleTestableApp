@@ -10,6 +10,7 @@ class MainTabBarController: UITabBarController {
     init(viewControllers: [BarTabable]) {
         super.init(nibName: nil, bundle: nil)
         self.viewControllers = viewControllers
+        self.title = "Home"
     }
 
     required init?(coder: NSCoder) {

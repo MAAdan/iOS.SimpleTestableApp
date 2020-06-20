@@ -14,7 +14,7 @@ class MainContainerViewController: UIViewController {
         super.viewDidLoad()
 
         let menuViewController = MenuViewController(tabTitle: TabBarType.menu.title, tabImageName: TabBarType.menu.imageName)
-        let sectionViewer = SectionViewerViewController(tabTitle: TabBarType.news.title, tabImageName: TabBarType.news.imageName)
+        let sectionViewer = SectionViewerViewController(tabTitle: TabBarType.news.title, tabImageName: TabBarType.news.imageName, tableView: UITableView())
 
         mainTabBarController = MainTabBarController(viewControllers: [sectionViewer, menuViewController])
         mainNavigationController = MainNavigationController(rootViewController: mainTabBarController)

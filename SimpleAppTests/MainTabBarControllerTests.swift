@@ -8,10 +8,19 @@ import XCTest
 
 class MainTabBarControllerTests: XCTestCase {
 
-    func testThatHasTwoTabs() throws {
+    var tabBarController: MainTabBarController!
+
+    override func setUp() {
         let viewControllers = [BarTabableMock(tabTitle: "", tabImageName: ""), BarTabableMock(tabTitle: "", tabImageName: "")]
-        let tabBarController = MainTabBarController(viewControllers: viewControllers)
-        XCTAssertEqual(tabBarController.viewControllers?.count, viewControllers.count)
+        tabBarController = MainTabBarController(viewControllers: viewControllers)
+    }
+
+    func testThatHasTwoTabs() throws {
+        XCTAssertEqual(tabBarController.viewControllers?.count, 2)
+    }
+
+    func testThatTitleIsNotNil() {
+        XCTAssertNotNil(tabBarController.title)
     }
 
     func testThatTabImagesExists() {
@@ -22,7 +31,12 @@ class MainTabBarControllerTests: XCTestCase {
 
 extension MainTabBarControllerTests {
     class BarTabableMock: UIViewController, BarTabable {
+        var tabTitle: String
+        var tabImageName: String
+
         required init(tabTitle: String, tabImageName: String) {
+            self.tabTitle = tabTitle
+            self.tabImageName = tabImageName
             super.init(nibName: nil, bundle: nil)
         }
         required init?(coder: NSCoder) {

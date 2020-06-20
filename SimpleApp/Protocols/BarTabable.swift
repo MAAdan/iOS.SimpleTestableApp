@@ -6,11 +6,12 @@
 import UIKit
 
 protocol BarTabable where Self: UIViewController {
-    init(tabTitle: String, tabImageName: String)
+    var tabTitle: String { get }
+    var tabImageName: String { get }
 }
 
 extension BarTabable {
-    func setTabBarInfo(tabTitle: String, tabImageName: String) {
+    func setTabBarInfo() {
         self.tabBarItem = UITabBarItem(title: tabTitle, image: UIImage(named: tabImageName), selectedImage: nil)
     }
 }

@@ -200,13 +200,11 @@
 		257EA50424966A45002D434C /* SimpleAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				25BB67D2249E59EB00D14F30 /* Extensions */,
 				257EA50724966A45002D434C /* Info.plist */,
 				2540C7BF24969BFD00F971EC /* json */,
 				257EA50524966A45002D434C /* ArticleTests.swift */,
 				2540C7BD2496984300F971EC /* SectionTests.swift */,
-				2540C7CF2496C70400F971EC /* ArticleExtensions.swift */,
-				2540C7D12496CBEF00F971EC /* SectionExtensions.swift */,
-				2540C7D32497C48D00F971EC /* BundleExtensions.swift */,
 				2540C7D52497FA4500F971EC /* APIClientTests.swift */,
 				25557B5B249BB1FF001EAEC8 /* MainTabBarControllerTests.swift */,
 				25557B60249BBA26001EAEC8 /* MainContainerViewControllerTests.swift */,
@@ -223,6 +221,16 @@
 				25BB67BA249C0AA900D14F30 /* BarTabable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		25BB67D2249E59EB00D14F30 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2540C7CF2496C70400F971EC /* ArticleExtensions.swift */,
+				2540C7D12496CBEF00F971EC /* SectionExtensions.swift */,
+				2540C7D32497C48D00F971EC /* BundleExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -7,9 +7,14 @@ import UIKit
 
 class MenuViewController: UIViewController, BarTabable {
 
+    var tabTitle: String
+    var tabImageName: String
+
     required init(tabTitle: String, tabImageName: String) {
+        self.tabTitle = tabTitle
+        self.tabImageName = tabImageName
         super.init(nibName: nil, bundle: nil)
-        setTabBarInfo(tabTitle: tabTitle, tabImageName: tabImageName)
+        setTabBarInfo()
     }
 
     required init?(coder: NSCoder) {
