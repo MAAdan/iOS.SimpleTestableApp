@@ -11,15 +11,19 @@ protocol SessionProtocol {
 
 extension URLSession: SessionProtocol { }
 
-class APIClient {
+enum APIClientError: Error {
+    case nilData
+    case decode
+    case genericNetwork(Error)
+}
+
+protocol APIClientProtocol {
+    func getSection(_ section: URL.sectionPath, completion: @escaping (Result<Section, APIClientError>) -> Void)
+}
+
+class APIClient: APIClientProtocol {
 
     private let session: SessionProtocol
-
-    enum APIClientError: Error {
-        case nilData
-        case decode
-        case genericNetwork(Error)
-    }
 
     init(session: SessionProtocol) {
         self.session = session

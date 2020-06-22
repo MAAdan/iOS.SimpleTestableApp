@@ -14,7 +14,17 @@ class MainContainerViewController: UIViewController {
         super.viewDidLoad()
 
         let menuViewController = MenuViewController(tabTitle: TabBarType.menu.title, tabImageName: TabBarType.menu.imageName)
-        let sectionViewer = SectionViewerViewController(tabTitle: TabBarType.news.title, tabImageName: TabBarType.news.imageName, tableView: UITableView())
+
+        let tableView = UITableView(frame: .zero)
+        let sectionDataProvider = SectionDataProvider()
+        let apiClient = APIClient(session: URLSession.shared)
+        let sectionViewer = SectionViewerViewController(
+            tabTitle: TabBarType.news.title,
+            tabImageName: TabBarType.news.imageName,
+            tableView: tableView,
+            sectionDataProvider: sectionDataProvider,
+            apiClient: apiClient
+        )
 
         mainTabBarController = MainTabBarController(viewControllers: [sectionViewer, menuViewController])
         mainNavigationController = MainNavigationController(rootViewController: mainTabBarController)

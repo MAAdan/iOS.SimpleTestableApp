@@ -40,6 +40,9 @@
 		25BB67CE249CBCCA00D14F30 /* MenuViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BB67CC249CBCCA00D14F30 /* MenuViewControllerViewController.swift */; };
 		25BB67CF249CBCCA00D14F30 /* MenuViewControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25BB67CD249CBCCA00D14F30 /* MenuViewControllerViewController.xib */; };
 		25BB67D1249D11D200D14F30 /* TabBarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BB67D0249D11D200D14F30 /* TabBarType.swift */; };
+		25DD8A01249E9267007C59E0 /* SectionDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DD8A00249E9267007C59E0 /* SectionDataProvider.swift */; };
+		25DD8A03249EB2A7007C59E0 /* SectionDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DD8A02249EB2A7007C59E0 /* SectionDataProviderTests.swift */; };
+		25DD8A0824A15B9E007C59E0 /* APIClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DD8A0724A15B9E007C59E0 /* APIClientMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,9 @@
 		25BB67CC249CBCCA00D14F30 /* MenuViewControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewControllerViewController.swift; sourceTree = "<group>"; };
 		25BB67CD249CBCCA00D14F30 /* MenuViewControllerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewControllerViewController.xib; sourceTree = "<group>"; };
 		25BB67D0249D11D200D14F30 /* TabBarType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarType.swift; sourceTree = "<group>"; };
+		25DD8A00249E9267007C59E0 /* SectionDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDataProvider.swift; sourceTree = "<group>"; };
+		25DD8A02249EB2A7007C59E0 /* SectionDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDataProviderTests.swift; sourceTree = "<group>"; };
+		25DD8A0724A15B9E007C59E0 /* APIClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +153,7 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		25557B5D249BB48F001EAEC8 /* View */ = {
+		25557B5D249BB48F001EAEC8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				257EA4F224966A43002D434C /* MainContainerViewController.swift */,
@@ -157,8 +163,9 @@
 				25BB67C9249CBCA400D14F30 /* SectionViewerViewController.xib */,
 				25BB67CC249CBCCA00D14F30 /* MenuViewControllerViewController.swift */,
 				25BB67CD249CBCCA00D14F30 /* MenuViewControllerViewController.xib */,
+				25DD8A00249E9267007C59E0 /* SectionDataProvider.swift */,
 			);
-			path = View;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		257EA4E224966A43002D434C = {
@@ -183,7 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				25BB67B9249C0A0F00D14F30 /* Protocols */,
-				25557B5D249BB48F001EAEC8 /* View */,
+				25557B5D249BB48F001EAEC8 /* Controller */,
 				2540C7D72497FCFB00F971EC /* Networking */,
 				2540C7CC2496B2D200F971EC /* Extensions */,
 				2540C7B42496851E00F971EC /* Model */,
@@ -200,6 +207,7 @@
 		257EA50424966A45002D434C /* SimpleAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				25DD8A0624A15B7C007C59E0 /* Mocks */,
 				25BB67D2249E59EB00D14F30 /* Extensions */,
 				257EA50724966A45002D434C /* Info.plist */,
 				2540C7BF24969BFD00F971EC /* json */,
@@ -211,6 +219,7 @@
 				25557B64249BEAD8001EAEC8 /* MainNavigationControllerTests.swift */,
 				25BB67BC249C94A300D14F30 /* MenuViewControllerTests.swift */,
 				25BB67BE249C94CE00D14F30 /* SectionViewerViewControllerTests.swift */,
+				25DD8A02249EB2A7007C59E0 /* SectionDataProviderTests.swift */,
 			);
 			path = SimpleAppTests;
 			sourceTree = "<group>";
@@ -231,6 +240,14 @@
 				2540C7D32497C48D00F971EC /* BundleExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		25DD8A0624A15B7C007C59E0 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				25DD8A0724A15B9E007C59E0 /* APIClientMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +359,7 @@
 				257EA4F324966A43002D434C /* MainContainerViewController.swift in Sources */,
 				2540C7CE2496B2F200F971EC /* DateFormatterExtension.swift in Sources */,
 				2540C7B62496852F00F971EC /* Article.swift in Sources */,
+				25DD8A01249E9267007C59E0 /* SectionDataProvider.swift in Sources */,
 				25BB67BB249C0AA900D14F30 /* BarTabable.swift in Sources */,
 				25BB67CE249CBCCA00D14F30 /* MenuViewControllerViewController.swift in Sources */,
 				25557B63249BC139001EAEC8 /* MainNavigationController.swift in Sources */,
@@ -361,7 +379,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				257EA50624966A45002D434C /* ArticleTests.swift in Sources */,
+				25DD8A0824A15B9E007C59E0 /* APIClientMock.swift in Sources */,
 				2540C7D02496C70400F971EC /* ArticleExtensions.swift in Sources */,
+				25DD8A03249EB2A7007C59E0 /* SectionDataProviderTests.swift in Sources */,
 				25BB67BD249C94A300D14F30 /* MenuViewControllerTests.swift in Sources */,
 				2540C7BE2496984300F971EC /* SectionTests.swift in Sources */,
 				25557B61249BBA26001EAEC8 /* MainContainerViewControllerTests.swift in Sources */,

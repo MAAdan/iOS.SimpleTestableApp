@@ -9,10 +9,16 @@ import UIKit
 
 class SectionViewerViewControllerTests: XCTestCase {
 
+    var tableView: UITableView!
+    var sectionDataProvider: SectionDataProvider!
     var sectionViewer: SectionViewerViewController!
+    var apiClient: APIClientMock!
 
     override func setUp() {
-        sectionViewer = SectionViewerViewController(tabTitle: TabBarType.news.title, tabImageName: TabBarType.news.imageName, tableView: UITableView())
+        tableView = UITableView(frame: .zero)
+        sectionDataProvider = SectionDataProvider()
+        apiClient = APIClientMock()
+        sectionViewer = SectionViewerViewController(tabTitle: TabBarType.news.title, tabImageName: TabBarType.news.imageName, tableView: tableView, sectionDataProvider: sectionDataProvider, apiClient: apiClient)
     }
 
     func testSectionViewerViewControllerTabBarInfoNotNil() {
@@ -21,14 +27,21 @@ class SectionViewerViewControllerTests: XCTestCase {
 
     func testThatTableViewIsInViewHeriachy() {
         sectionViewer.loadViewIfNeeded()
-        var tableViews = [UIView]()
-        sectionViewer.view.subviews.forEach {
-            if $0 is UITableView {
-                tableViews.append($0)
-            }
+        let tableViews = sectionViewer.view.subviews.filter {
+            $0 == tableView
         }
 
         XCTAssertEqual(tableViews.count, 1)
         XCTAssertNotNil(tableViews.first)
+    }
+
+    func testThatDataSourceIsSectionDataProvider() {
+        sectionViewer.loadViewIfNeeded()
+        XCTAssertTrue(tableView.dataSource is SectionDataProvider)
+    }
+
+    func testThatViewDidLoadCallsGetSection() {
+        sectionViewer.loadViewIfNeeded()
+        XCTAssertTrue(apiClient.getSectionWasCalled)
     }
 }

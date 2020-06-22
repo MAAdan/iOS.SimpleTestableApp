@@ -10,12 +10,17 @@ class SectionViewerViewController: UIViewController, BarTabable {
     var tabTitle: String
     var tabImageName: String
     private let tableView: UITableView
+    private let sectionDataProvider: SectionDataProvider
+    private let apiClient: APIClientProtocol
 
-    required init(tabTitle: String, tabImageName: String, tableView: UITableView) {
+    required init(tabTitle: String, tabImageName: String, tableView: UITableView, sectionDataProvider: SectionDataProvider, apiClient: APIClientProtocol) {
         self.tableView = tableView
         self.tabTitle = tabTitle
         self.tabImageName = tabImageName
+        self.sectionDataProvider = sectionDataProvider
+        self.apiClient = apiClient
         super.init(nibName: nil, bundle: nil)
+        self.tableView.dataSource = sectionDataProvider
         setTabBarInfo()
     }
 
@@ -34,5 +39,9 @@ class SectionViewerViewController: UIViewController, BarTabable {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
+
+        apiClient.getSection(.index) { result in
+            print("Hi")
+        }
     }
 }
