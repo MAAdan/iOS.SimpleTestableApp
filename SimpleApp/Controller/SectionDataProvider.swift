@@ -6,11 +6,11 @@
 import Foundation
 import UIKit
 
-protocol SectionSettable {
+protocol SectionDataSettable {
     var sectionData: Section? { get set }
 }
 
-class SectionDataProvider: NSObject, SectionSettable {
+class SectionDataProvider: NSObject, SectionDataSettable {
     var sectionData: Section?
 }
 

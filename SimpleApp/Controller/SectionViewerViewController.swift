@@ -41,7 +41,15 @@ class SectionViewerViewController: UIViewController, BarTabable {
         ])
 
         apiClient.getSection(.index) { result in
-            print("Hi")
+            switch result {
+            case .success(_):
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            case .failure(_):
+                print("hi")
+                break
+            }
         }
     }
 }
