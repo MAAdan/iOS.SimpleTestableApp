@@ -9,16 +9,16 @@ import UIKit
 
 class SectionViewerViewControllerTests: XCTestCase {
 
-    var tableView: UITableViewMock!
-    var sectionDataProvider: SectionDataProvider!
+    var tableView: MockUITableView!
+    var sectionDataProvider: MockSectionDataProvider!
     var sectionViewer: SectionViewerViewController!
-    var mockApiClient: APIClientMock!
+    var mockApiClient: MockAPIClient!
     var apiClient: APIClient!
     var mockURLSession: MockURLSession!
 
     override func setUp() {
-        tableView = UITableViewMock(frame: .zero)
-        sectionDataProvider = SectionDataProvider()
+        tableView = MockUITableView(frame: .zero)
+        sectionDataProvider = MockSectionDataProvider()
     }
 
     func testSectionViewerViewControllerTabBarInfoNotNil() {
@@ -38,7 +38,7 @@ class SectionViewerViewControllerTests: XCTestCase {
 
     func testThatDataSourceIsSectionDataProvider() {
         makeSectionViewerWithApiClientMock()
-        XCTAssertTrue(tableView.dataSource is SectionDataProvider)
+        XCTAssertTrue(tableView.dataSource is SectionDataSettable)
     }
 
     func testThatViewDidLoadCallsGetSection() {
@@ -49,20 +49,38 @@ class SectionViewerViewControllerTests: XCTestCase {
 
     func testThatReloadDataIsCalledAfterSuccessfulRequest() {
         guard let tableView = tableView else { return XCTFail() }
-        makeSectionViewer()
+
+        makeSectionViewer(makeSectionData())
 
         let promise = XCTKVOExpectation(keyPath: "reloadDataWasCalled", object: tableView, expectedValue: true)
 
         sectionViewer.loadViewIfNeeded()
 
-        let result = XCTWaiter().wait(for: [promise], timeout: 1)
+        let result = XCTWaiter().wait(for: [promise], timeout: 0.5)
         XCTAssertEqual(result, .completed)
+    }
+
+    func testThatSectionDataIsNotNilAfterSuccessfulRequest() {
+        makeSectionViewer(makeSectionData())
+        sectionViewer.loadViewIfNeeded()
+
+        let expectation = self.expectation(description: #function)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+            XCTAssertNotNil(self.sectionDataProvider.sectionData)
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 0.10)
     }
 }
 
 extension SectionViewerViewControllerTests {
-    private func makeSectionViewer() {
-        mockURLSession = MockURLSession(data: nil, urlResponse: nil, error: nil)
+    func makeSectionData() -> Data? {
+        return TestUtils().getData(from: "section", fileType: "json")
+    }
+
+    private func makeSectionViewer(_ data: Data?) {
+        mockURLSession = MockURLSession(data: data, urlResponse: nil, error: nil)
         apiClient = APIClient(session: mockURLSession)
         sectionViewer = SectionViewerViewController(
             tabTitle: TabBarType.news.title,
@@ -74,7 +92,7 @@ extension SectionViewerViewControllerTests {
     }
 
     private func makeSectionViewerWithApiClientMock() {
-        mockApiClient = APIClientMock()
+        mockApiClient = MockAPIClient()
         sectionViewer = SectionViewerViewController(
             tabTitle: TabBarType.news.title,
             tabImageName: TabBarType.news.imageName,
@@ -86,7 +104,19 @@ extension SectionViewerViewControllerTests {
 }
 
 extension SectionViewerViewControllerTests {
-    class UITableViewMock: UITableView {
+    class MockSectionDataProvider: NSObject, SectionDataSettable {
+        var sectionData: Section?
+
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return 0
+        }
+
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            return UITableViewCell()
+        }
+    }
+
+    class MockUITableView: UITableView {
         //Add  @objc dynamic in order to make UITableViewMock KVC-compliant
         @objc dynamic var reloadDataWasCalled = false
         override func reloadData() {

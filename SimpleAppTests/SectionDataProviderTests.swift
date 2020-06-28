@@ -14,7 +14,7 @@ class SectionDataProviderTests: XCTestCase {
     override func setUp() {
         tableView = UITableView(frame: .zero)
         sectionDataProvider = SectionDataProvider()
-        let apiClientMock = APIClientMock()
+        let apiClientMock = MockAPIClient()
         sectionViewer = SectionViewerViewController(tabTitle: TabBarType.news.title, tabImageName: TabBarType.news.imageName, tableView: tableView, sectionDataProvider: sectionDataProvider, apiClient: apiClientMock)
     }
 

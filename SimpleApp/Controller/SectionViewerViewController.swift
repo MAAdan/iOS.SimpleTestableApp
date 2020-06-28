@@ -10,10 +10,10 @@ class SectionViewerViewController: UIViewController, BarTabable {
     var tabTitle: String
     var tabImageName: String
     private let tableView: UITableView
-    private let sectionDataProvider: SectionDataProvider
+    private let sectionDataProvider: SectionDataSettable
     private let apiClient: APIClientProtocol
 
-    required init(tabTitle: String, tabImageName: String, tableView: UITableView, sectionDataProvider: SectionDataProvider, apiClient: APIClientProtocol) {
+    required init(tabTitle: String, tabImageName: String, tableView: UITableView, sectionDataProvider: SectionDataSettable, apiClient: APIClientProtocol) {
         self.tableView = tableView
         self.tabTitle = tabTitle
         self.tabImageName = tabImageName
@@ -41,13 +41,14 @@ class SectionViewerViewController: UIViewController, BarTabable {
         ])
 
         apiClient.getSection(.index) { result in
+
             switch result {
-            case .success(_):
+            case .success(let section):
+                self.sectionDataProvider.sectionData = section
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
             case .failure(_):
-                print("hi")
                 break
             }
         }

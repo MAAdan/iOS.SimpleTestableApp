@@ -6,7 +6,7 @@
 import Foundation
 @testable import SimpleApp
 
-class APIClientMock: APIClientProtocol {
+class MockAPIClient: APIClientProtocol {
     var getSectionWasCalled = false
     func getSection(_ section: URL.sectionPath, completion: @escaping (Result<Section, APIClientError>) -> Void) {
         getSectionWasCalled = true

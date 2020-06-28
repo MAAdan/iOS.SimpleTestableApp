@@ -11,7 +11,7 @@ class MainTabBarControllerTests: XCTestCase {
     var tabBarController: MainTabBarController!
 
     override func setUp() {
-        let viewControllers = [BarTabableMock(tabTitle: "", tabImageName: ""), BarTabableMock(tabTitle: "", tabImageName: "")]
+        let viewControllers = [MockBarTabable(tabTitle: "", tabImageName: ""), MockBarTabable(tabTitle: "", tabImageName: "")]
         tabBarController = MainTabBarController(viewControllers: viewControllers)
     }
 
@@ -30,7 +30,7 @@ class MainTabBarControllerTests: XCTestCase {
 }
 
 extension MainTabBarControllerTests {
-    class BarTabableMock: UIViewController, BarTabable {
+    class MockBarTabable: UIViewController, BarTabable {
         var tabTitle: String
         var tabImageName: String
 

@@ -6,7 +6,7 @@
 import Foundation
 import UIKit
 
-protocol SectionDataSettable {
+protocol SectionDataSettable: UITableViewDataSource {
     var sectionData: Section? { get set }
 }
 
