@@ -12,6 +12,7 @@ class SectionViewerViewController: UIViewController, BarTabable {
     private let tableView: UITableView
     private let sectionDataProvider: SectionDataSettable
     private let apiClient: APIClientProtocol
+    private let newsCellFileName = String(describing: NewsTableViewCell.self)
 
     required init(tabTitle: String, tabImageName: String, tableView: UITableView, sectionDataProvider: SectionDataSettable, apiClient: APIClientProtocol) {
         self.tableView = tableView
@@ -31,6 +32,7 @@ class SectionViewerViewController: UIViewController, BarTabable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.register(UINib(nibName: newsCellFileName, bundle: nil), forCellReuseIdentifier: newsCellFileName)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
@@ -41,7 +43,6 @@ class SectionViewerViewController: UIViewController, BarTabable {
         ])
 
         apiClient.getSection(.index) { result in
-
             switch result {
             case .success(let section):
                 self.sectionDataProvider.sectionData = section

@@ -40,6 +40,8 @@
 		25BB67CE249CBCCA00D14F30 /* MenuViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BB67CC249CBCCA00D14F30 /* MenuViewControllerViewController.swift */; };
 		25BB67CF249CBCCA00D14F30 /* MenuViewControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25BB67CD249CBCCA00D14F30 /* MenuViewControllerViewController.xib */; };
 		25BB67D1249D11D200D14F30 /* TabBarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BB67D0249D11D200D14F30 /* TabBarType.swift */; };
+		25C8980924A93C0300F739F9 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C8980724A93C0300F739F9 /* NewsTableViewCell.swift */; };
+		25C8980A24A93C0300F739F9 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25C8980824A93C0300F739F9 /* NewsTableViewCell.xib */; };
 		25DD8A01249E9267007C59E0 /* SectionDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DD8A00249E9267007C59E0 /* SectionDataProvider.swift */; };
 		25DD8A03249EB2A7007C59E0 /* SectionDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DD8A02249EB2A7007C59E0 /* SectionDataProviderTests.swift */; };
 		25DD8A0824A15B9E007C59E0 /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DD8A0724A15B9E007C59E0 /* MockAPIClient.swift */; };
@@ -94,6 +96,8 @@
 		25BB67CC249CBCCA00D14F30 /* MenuViewControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewControllerViewController.swift; sourceTree = "<group>"; };
 		25BB67CD249CBCCA00D14F30 /* MenuViewControllerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewControllerViewController.xib; sourceTree = "<group>"; };
 		25BB67D0249D11D200D14F30 /* TabBarType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarType.swift; sourceTree = "<group>"; };
+		25C8980724A93C0300F739F9 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		25C8980824A93C0300F739F9 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		25DD8A00249E9267007C59E0 /* SectionDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDataProvider.swift; sourceTree = "<group>"; };
 		25DD8A02249EB2A7007C59E0 /* SectionDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDataProviderTests.swift; sourceTree = "<group>"; };
 		25DD8A0724A15B9E007C59E0 /* MockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
@@ -166,6 +170,8 @@
 				25BB67CC249CBCCA00D14F30 /* MenuViewControllerViewController.swift */,
 				25BB67CD249CBCCA00D14F30 /* MenuViewControllerViewController.xib */,
 				25DD8A00249E9267007C59E0 /* SectionDataProvider.swift */,
+				25C8980724A93C0300F739F9 /* NewsTableViewCell.swift */,
+				25C8980824A93C0300F739F9 /* NewsTableViewCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -338,6 +344,7 @@
 				257EA4F824966A44002D434C /* Assets.xcassets in Resources */,
 				25BB67CB249CBCA400D14F30 /* SectionViewerViewController.xib in Resources */,
 				257EA4F624966A43002D434C /* Main.storyboard in Resources */,
+				25C8980A24A93C0300F739F9 /* NewsTableViewCell.xib in Resources */,
 				25BB67CF249CBCCA00D14F30 /* MenuViewControllerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +368,7 @@
 			files = (
 				257EA4F324966A43002D434C /* MainContainerViewController.swift in Sources */,
 				2540C7CE2496B2F200F971EC /* DateFormatterExtension.swift in Sources */,
+				25C8980924A93C0300F739F9 /* NewsTableViewCell.swift in Sources */,
 				2540C7B62496852F00F971EC /* Article.swift in Sources */,
 				25DD8A01249E9267007C59E0 /* SectionDataProvider.swift in Sources */,
 				25BB67BB249C0AA900D14F30 /* BarTabable.swift in Sources */,

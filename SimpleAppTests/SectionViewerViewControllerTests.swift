@@ -56,7 +56,7 @@ class SectionViewerViewControllerTests: XCTestCase {
 
         sectionViewer.loadViewIfNeeded()
 
-        let result = XCTWaiter().wait(for: [promise], timeout: 0.5)
+        let result = XCTWaiter().wait(for: [promise], timeout: 0.05)
         XCTAssertEqual(result, .completed)
     }
 
@@ -70,7 +70,13 @@ class SectionViewerViewControllerTests: XCTestCase {
             expectation.fulfill()
         }
 
-        wait(for: [expectation], timeout: 0.10)
+        wait(for: [expectation], timeout: 0.05)
+    }
+
+    func testThatRegisterCellIsCalled() {
+        makeSectionViewerWithApiClientMock()
+        sectionViewer.loadViewIfNeeded()
+        XCTAssertTrue(tableView.registerNibWasCalled)
     }
 }
 
@@ -119,8 +125,14 @@ extension SectionViewerViewControllerTests {
     class MockUITableView: UITableView {
         //Add  @objc dynamic in order to make UITableViewMock KVC-compliant
         @objc dynamic var reloadDataWasCalled = false
+        var registerNibWasCalled = false
+
         override func reloadData() {
             reloadDataWasCalled = true
+        }
+
+        override func register(_ nib: UINib?, forCellReuseIdentifier identifier: String) {
+            registerNibWasCalled = true
         }
     }
 }

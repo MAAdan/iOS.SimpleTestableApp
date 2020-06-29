@@ -8,14 +8,12 @@ import XCTest
 
 class SectionDataProviderTests: XCTestCase {
     var sectionDataProvider: SectionDataProvider!
-    var sectionViewer: SectionViewerViewController!
     var tableView: UITableView!
 
     override func setUp() {
         tableView = UITableView(frame: .zero)
         sectionDataProvider = SectionDataProvider()
-        let apiClientMock = MockAPIClient()
-        sectionViewer = SectionViewerViewController(tabTitle: TabBarType.news.title, tabImageName: TabBarType.news.imageName, tableView: tableView, sectionDataProvider: sectionDataProvider, apiClient: apiClientMock)
+        tableView.dataSource = sectionDataProvider
     }
 
     func testNumberOfSectionsIsOne() {
@@ -26,5 +24,14 @@ class SectionDataProviderTests: XCTestCase {
         sectionDataProvider.sectionData = Section.makeSection()
         let totalRows = tableView.numberOfRows(inSection: 0)
         XCTAssertEqual(totalRows, 1)
+    }
+
+    func testThatTableViewCellIsCorrectType() {
+        sectionDataProvider.sectionData = Section.makeSection()
+        let newsCellFileName = String(describing: NewsTableViewCell.self)
+        tableView.register(UINib(nibName: newsCellFileName, bundle: nil), forCellReuseIdentifier: newsCellFileName)
+        tableView.reloadData()
+        let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0))
+        XCTAssertTrue(cell is NewsTableViewCell)
     }
 }
