@@ -9,9 +9,9 @@ import UIKit
 
 class SectionViewerViewControllerTests: XCTestCase {
 
+    var sectionViewer: SectionViewerViewController!
     var tableView: MockUITableView!
     var sectionDataProvider: MockSectionDataProvider!
-    var sectionViewer: SectionViewerViewController!
     var mockApiClient: MockAPIClient!
     var apiClient: APIClient!
     var mockURLSession: MockURLSession!
@@ -48,16 +48,16 @@ class SectionViewerViewControllerTests: XCTestCase {
     }
 
     func testThatReloadDataIsCalledAfterSuccessfulRequest() {
-        guard let tableView = tableView else { return XCTFail() }
-
         makeSectionViewer(makeSectionData())
-
-        let promise = XCTKVOExpectation(keyPath: "reloadDataWasCalled", object: tableView, expectedValue: true)
-
         sectionViewer.loadViewIfNeeded()
 
-        let result = XCTWaiter().wait(for: [promise], timeout: 0.05)
-        XCTAssertEqual(result, .completed)
+        let expectation = self.expectation(description: #function)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+            XCTAssertTrue(self.tableView.reloadDataWasCalled)
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 0.05)
     }
 
     func testThatSectionDataIsNotNilAfterSuccessfulRequest() {
@@ -77,6 +77,20 @@ class SectionViewerViewControllerTests: XCTestCase {
         makeSectionViewerWithApiClientMock()
         sectionViewer.loadViewIfNeeded()
         XCTAssertTrue(tableView.registerNibWasCalled)
+    }
+
+    func testThatRetryAlertIsShownOnRequestFailure() {
+        makeSectionViewer(TestUtils().getData(from: "section-with-error", fileType: "json"))
+        let keyWindow = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+        keyWindow?.rootViewController = sectionViewer
+
+        let expectation = self.expectation(description: #function)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+            XCTAssertNotNil(self.sectionViewer.presentedViewController)
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 0.05)
     }
 }
 
