@@ -13,9 +13,6 @@ class SectionViewerViewController: UIViewController, BarTabable {
     private let sectionDataProvider: SectionDataSettable
     private let apiClient: APIClientProtocol
     private let newsCellFileName = String(describing: NewsTableViewCell.self)
-    private lazy var alertController: UIAlertController = {
-        return UIAlertController(title: "Error", message: "Error", preferredStyle: .alert)
-    }()
 
     required init(tabTitle: String, tabImageName: String, tableView: UITableView, sectionDataProvider: SectionDataSettable, apiClient: APIClientProtocol) {
         self.tableView = tableView
@@ -35,8 +32,6 @@ class SectionViewerViewController: UIViewController, BarTabable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
-
         tableView.register(UINib(nibName: newsCellFileName, bundle: nil), forCellReuseIdentifier: newsCellFileName)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
@@ -47,6 +42,10 @@ class SectionViewerViewController: UIViewController, BarTabable {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
 
+        getSection()
+    }
+
+    private func getSection() {
         apiClient.getSection(.index) { result in
             switch result {
             case .success(let section):
@@ -56,8 +55,8 @@ class SectionViewerViewController: UIViewController, BarTabable {
                 }
             case .failure(_):
                 DispatchQueue.main.async {
-                    self.present(self.alertController, animated: true)
-                    print("hi")
+                    let alert = RetryController.makeAlert(title: "error", message: "error", completionHandler: self.getSection)
+                    self.present(alert, animated: true)
                 }
             }
         }

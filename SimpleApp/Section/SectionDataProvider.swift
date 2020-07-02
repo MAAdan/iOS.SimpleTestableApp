@@ -16,15 +16,19 @@ class SectionDataProvider: NSObject, SectionDataSettable {
 
 extension SectionDataProvider: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let sectionData = sectionData else {
-            return 0
-        }
-        
-        return sectionData.contents.count
+        return sectionData?.contents.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: NewsTableViewCell.self), for: indexPath)
+        guard let article = sectionData?.contents[indexPath.row] else {
+            preconditionFailure()
+        }
+
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: NewsTableViewCell.self), for: indexPath) as? NewsTableViewCell else {
+            preconditionFailure()
+        }
+
+        cell.configure(article)
         return cell
     }
 }

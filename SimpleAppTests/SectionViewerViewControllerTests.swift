@@ -28,10 +28,7 @@ class SectionViewerViewControllerTests: XCTestCase {
 
     func testThatTableViewIsInViewHeriachy() {
         makeSectionViewerWithApiClientMock()
-        let tableViews = sectionViewer.view.subviews.filter {
-            $0 == tableView
-        }
-
+        let tableViews = sectionViewer.view.subviews.filter { $0 == tableView }
         XCTAssertEqual(tableViews.count, 1)
         XCTAssertNotNil(tableViews.first)
     }
@@ -52,12 +49,12 @@ class SectionViewerViewControllerTests: XCTestCase {
         sectionViewer.loadViewIfNeeded()
 
         let expectation = self.expectation(description: #function)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
             XCTAssertTrue(self.tableView.reloadDataWasCalled)
             expectation.fulfill()
         }
 
-        wait(for: [expectation], timeout: 0.05)
+        wait(for: [expectation], timeout: 0.15)
     }
 
     func testThatSectionDataIsNotNilAfterSuccessfulRequest() {
@@ -85,12 +82,19 @@ class SectionViewerViewControllerTests: XCTestCase {
         keyWindow?.rootViewController = sectionViewer
 
         let expectation = self.expectation(description: #function)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.10) {
             XCTAssertNotNil(self.sectionViewer.presentedViewController)
+            XCTAssertTrue(self.sectionViewer.presentedViewController is UIAlertController)
             expectation.fulfill()
         }
 
-        wait(for: [expectation], timeout: 0.05)
+        wait(for: [expectation], timeout: 0.15)
+    }
+
+    func testThatTableViewHasHeightCells() {
+        makeSectionViewer(nil)
+        sectionViewer.loadViewIfNeeded()
+        XCTAssertEqual(tableView.rowHeight, UITableView.automaticDimension)
     }
 }
 
@@ -137,8 +141,7 @@ extension SectionViewerViewControllerTests {
     }
 
     class MockUITableView: UITableView {
-        //Add  @objc dynamic in order to make UITableViewMock KVC-compliant
-        @objc dynamic var reloadDataWasCalled = false
+        var reloadDataWasCalled = false
         var registerNibWasCalled = false
 
         override func reloadData() {

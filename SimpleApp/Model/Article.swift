@@ -12,16 +12,14 @@ struct Article: Decodable, Equatable {
     let title: String
     let sponsored: String
     let subsection: String
-    let urlSubsection: URL
-    let subtitle: String
     let idSection: String
     let viewClass: String
     let section: String
     let date: Date
     let video: Bool
     let multimedia: [Multimedia]
-    let authors: [Author]
-    let tags: [Tag]
+    let authors: [Author]?
+    let tags: [Tag]?
 }
 
 extension Article {
@@ -32,8 +30,6 @@ extension Article {
         case title = "titulo"
         case sponsored = "patrocinio"
         case subsection = "cintillo"
-        case urlSubsection = "cintilloUrl"
-        case subtitle
         case idSection = "sectionId"
         case viewClass
         case section = "seccion"
@@ -45,9 +41,10 @@ extension Article {
     }
 
     enum ArticleType: String, Decodable, Equatable {
-        case article
-        case chronicle
-        case live
+        case article = "noticia"
+        case chronicle = "cronica"
+        case live = "directo"
+        case liveChronicle = "cronicadirecto"
     }
 
     struct Tag: Decodable, Equatable {
@@ -100,7 +97,7 @@ extension Article {
         }
 
         enum MultimediaPosition: String, Decodable, Equatable {
-            case subtitle
+            case subtitle = "Antetitulo"
         }
     }
 }

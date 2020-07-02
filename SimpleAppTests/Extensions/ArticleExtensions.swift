@@ -23,6 +23,6 @@ extension Article {
             return nil
         }
 
-        return Article(id: "id", type: .live, url: url, title: "title", sponsored: "sponsored", subsection: "subsection", urlSubsection: url, subtitle: "subtitle", idSection: "sectionId", viewClass: "viewClass", section: "section", date: articleDate, video: false, multimedia: multimedia, authors: authors, tags: tags)
+        return Article(id: "id", type: .live, url: url, title: "title", sponsored: "sponsored", subsection: "subsection", idSection: "sectionId", viewClass: "viewClass", section: "section", date: articleDate, video: false, multimedia: multimedia, authors: authors, tags: tags)
     }
 }

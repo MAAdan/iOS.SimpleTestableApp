@@ -27,11 +27,35 @@ class SectionDataProviderTests: XCTestCase {
     }
 
     func testThatTableViewCellIsCorrectType() {
+        makeTableWithRows()
+        let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0))
+        XCTAssertTrue(cell is NewsTableViewCell)
+    }
+
+    func testThatCellShowsCorrectTitle() {
+        makeTableWithRows()
+        guard let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? NewsTableViewCell else {
+            return XCTFail()
+        }
+
+        XCTAssertEqual(cell.articleTitle.text, "title")
+    }
+
+    func testThatTitleLabelHasZeroLines() {
+        makeTableWithRows()
+        guard let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? NewsTableViewCell else {
+            return XCTFail()
+        }
+
+        XCTAssertEqual(cell.articleTitle.numberOfLines, 0)
+    }
+}
+
+extension SectionDataProviderTests {
+    func makeTableWithRows() {
         sectionDataProvider.sectionData = Section.makeSection()
         let newsCellFileName = String(describing: NewsTableViewCell.self)
         tableView.register(UINib(nibName: newsCellFileName, bundle: nil), forCellReuseIdentifier: newsCellFileName)
         tableView.reloadData()
-        let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0))
-        XCTAssertTrue(cell is NewsTableViewCell)
     }
 }

@@ -1,6 +1,6 @@
 {
     "id": "id",
-    "type": "live",
+    "type": "directo",
     "url": "https://www.url.com",
     "titulo": "title",
     "patrocinio": "sponsored",
@@ -23,7 +23,7 @@
             "titulo": "title",
             "autor": "author",
             "type": "image",
-            "position": "subtitle"
+            "position": "Antetitulo"
         }
     ],
     "authors": [
